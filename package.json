@@ -1,0 +1,22 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "description": "努力打造一系列适合初中级工程师能够看得懂的优质文章，今年博客侧重于vue、node和webpack等底层原理分析，如果想第一时间获取文章，欢迎关注**我的公众号：前端工匠，接下去的路我们一起走！**",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ljianshu/Blog.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ljianshu/Blog/issues"
+  },
+  "homepage": "https://github.com/ljianshu/Blog#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
