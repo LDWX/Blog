@@ -8,9 +8,6 @@
   </head>
   <body>
     <script>
-      function myCallback(data) {
-        console.log('this is:', data)
-      }
       function jsonp({ url, params, callback }) {
         return new Promise((resolve, reject) => {
           let script = document.createElement('script')

@@ -11,8 +11,12 @@
       let xhr = new XMLHttpRequest()
       document.cookie = 'name=xiamen'// cookie不能跨域
       xhr.withCredentials = true // 前端设置是否带cookie
+<<<<<<< HEAD
       xhr.open('GET', 'http://localhost:4000/getData', true)
       // xhr.open('PUT', 'http://localhost:4000/getData', true)
+=======
+      xhr.open('PUT', 'http://localhost:4000/getData', true)
+>>>>>>> cda7bc7e02970cd78e21bb18f2c028da11e9f909
       xhr.setRequestHeader('name', 'xiamen')
       xhr.onreadystatechange = function() {
         if (xhr.readyState === 4) {
