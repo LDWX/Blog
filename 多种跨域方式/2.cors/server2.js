@@ -3,15 +3,9 @@ let app = express()
 let whitList = ['http://localhost:3000'] //设置白名单
 app.use(function(req, res, next) {
   let origin = req.headers.origin
-<<<<<<< HEAD
   console.log('origin: ', origin)
   if (whitList.includes(origin)) {
     // 设置哪个源可以访问我
-    // res.setHeader('Access-Control-Allow-Origin', '*')
-=======
-  if (whitList.includes(origin)) {
-    // 设置哪个源可以访问我
->>>>>>> cda7bc7e02970cd78e21bb18f2c028da11e9f909
     res.setHeader('Access-Control-Allow-Origin', origin)
     // 允许携带哪个头访问我
     res.setHeader('Access-Control-Allow-Headers', 'name')
