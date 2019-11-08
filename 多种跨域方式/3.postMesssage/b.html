@@ -7,10 +7,12 @@
   <title>Document</title>
 </head>
 <body>
+  <h1>this is b.html</h1>
   <script>
     window.onmessage = function (e) {
       console.log(e.data);
-      e.source.postMessage('我不爱你',e.origin)
+      window.postMessage('这条消息从b.html发送',e.origin)
+      // e.source.postMessage('这条消息从b.html发送',e.origin)
     }
   </script>
 </body>

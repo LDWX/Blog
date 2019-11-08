@@ -7,22 +7,28 @@
     <title>Document</title>
   </head>
   <body>
+    <button onclick="queryData()">请求接口</button>
     <script>
-      let xhr = new XMLHttpRequest()
-      document.cookie = 'name=xiamen'// cookie不能跨域
-      xhr.withCredentials = true // 前端设置是否带cookie
-      xhr.open('GET', 'http://localhost:4000/getData', true)
-      // xhr.open('PUT', 'http://localhost:4000/getData', true)
-      xhr.setRequestHeader('name', 'xiamen')
-      xhr.onreadystatechange = function() {
-        if (xhr.readyState === 4) {
-          if ((xhr.status >= 200 && xhr.status < 300) || xhr.status === 304) {
-            console.log(xhr.response)
-            console.log(xhr.getResponseHeader('name'))
+      function queryData() {
+        let xhr = new XMLHttpRequest()
+        document.cookie = 'name=xiamen'// cookie不能跨域
+        xhr.withCredentials = true // 前端设置是否带cookie
+        xhr.open('POST', 'http://localhost:4000/getData', true)
+        // xhr.open('PUT', 'http://localhost:4000/getData', true)
+        xhr.setRequestHeader('Cache-Control', 'max-age=30, must-revalidate')
+        xhr.setRequestHeader('name', 'xiamen')
+        xhr.setRequestHeader('content-type', 'application/json')
+        xhr.onreadystatechange = function() {
+          if (xhr.readyState === 4) {
+            if ((xhr.status >= 200 && xhr.status < 300) || xhr.status === 304) {
+              console.log('response', xhr.response)
+              console.log('response header', xhr.getResponseHeader('name'))
+              console.log('response header', xhr.getResponseHeader('content-type'))
+            }
           }
         }
+        xhr.send()
       }
-      xhr.send()
     </script>
   </body>
 </html>

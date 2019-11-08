@@ -7,16 +7,16 @@
   <title>Document</title>
 </head>
 <body>
-  <iframe src="http://localhost:4000/b.html" frameborder="0" id="frame" onload="load()"></iframe>
+  <h1>this is a.html</h1>
+  <iframe src="http://localhost:4000/b.html" frameborder="3" id="frame" onload="load()"></iframe>
   <script>
     function load() {
       let frame = document.getElementById('frame');
-      frame.contentWindow.postMessage('我爱你','http://localhost:4000');
+      frame.contentWindow.postMessage('这个消息从a.html发送','http://localhost:4000');
       window.onmessage = function (e) {
         console.log(e.data);
       }
     }
-  
   </script>
 </body>
 </html>

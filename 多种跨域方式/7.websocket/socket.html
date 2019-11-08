@@ -11,7 +11,7 @@
     // 高级api 不兼容 socket.io(一般使用它)
     let socket = new WebSocket('ws://localhost:3000');
     socket.onopen = function () {
-      socket.send('我爱你');
+      socket.send('发送消息');
     }
     socket.onmessage = function (e) {
       console.log(e.data);
