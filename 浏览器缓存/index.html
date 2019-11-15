@@ -13,23 +13,16 @@
 </head>
 <body>
   <h1>浏览器缓存</h1>
-  <img src="./face.jpg?max-age=30" alt="image">
+  <img src="./face.jpg" alt="image">
   <button onclick="queryData()">请求接口</button>
     <script>
       function queryData() {
         let xhr = new XMLHttpRequest()
-        document.cookie = 'name=xiamen'// cookie不能跨域
-        xhr.withCredentials = true // 前端设置是否带cookie
-        xhr.open('POST', 'http://localhost:4000/getData', true)
-        // xhr.setRequestHeader('content-type', 'application/json')
-        // xhr.setRequestHeader('Cache-Control', 'max-age=100')
-        // xhr.setRequestHeader('last-modified', new Date())
+        xhr.open('GET', 'http://localhost:4000/getData', true)
         xhr.onreadystatechange = function() {
           if (xhr.readyState === 4) {
             if ((xhr.status >= 200 && xhr.status < 300) || xhr.status === 304) {
               console.log('response', xhr.response)
-              console.log('response name', xhr.getResponseHeader('name'))
-              console.log('response content-type', xhr.getResponseHeader('content-type'))
             }
           }
         }

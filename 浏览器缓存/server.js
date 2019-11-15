@@ -1,13 +1,13 @@
 let express = require('express')
 let path = require('path')
 let app = express()
-app.post('/getData', function(req, res) {
+app.get('/getData', function(req, res) {
   console.log('///////////////////////////////')
-  // res.setHeader("Cache-Control", "public, max-age=60")
-  // res.setHeader("Last-Modified", new Date())
+  // res.setHeader("Cache-Control", "public, max-age=10")
   // console.log(req.headers)
   console.log(res.getHeaders())
-  res.end('我不爱你')
+  // res.end('我不爱你')
+  res.sendFile(`${__dirname}/scene.jpg`)
   return
 })
 
